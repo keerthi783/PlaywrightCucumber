@@ -1,0 +1,69 @@
+[
+  {
+    "description": "  As a user\n  I want to execute a GraphQL query to fetch user data\n  So that I can verify the API functionality",
+    "elements": [
+      {
+        "description": "",
+        "id": "api-test---execute-graphql-query;fetch-user-data",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Fetch User Data",
+        "steps": [
+          {
+            "arguments": [
+              {
+                "content": "{\n  user(id: 6940083) {\n    id\n    name\n    email\n    gender\n    status\n  }\n}",
+                "line": 8
+              }
+            ],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I perform a GraphQL POST request to \"/graphql\" with query",
+            "match": {
+              "location": "tests\\steps\\User_steps.spec.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 510922700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the response status code should be 200",
+            "match": {
+              "location": "tests\\steps\\User_steps.spec.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 564900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the response body should contain user details",
+            "match": {
+              "location": "tests\\steps\\User_steps.spec.js:43"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 212899,
+              "error_message": "Error: Expected response body to contain complete user details\n    at World.<anonymous> (C:\\Users\\00168W744\\Documents\\Playwright_Assignment\\tests\\steps\\User_steps.spec.js:45:15)"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "api-test---execute-graphql-query",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "API Test - Execute GraphQL Query",
+    "tags": [],
+    "uri": "tests\\features\\UserDetails.feature"
+  }
+]
