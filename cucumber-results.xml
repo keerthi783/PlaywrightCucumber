@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<0>
+    <description>  As a user
+  I want to execute a GraphQL query to fetch user data
+  So that I can verify the API functionality</description>
+    <elements>
+        <description></description>
+        <id>api-test---execute-graphql-query;fetch-user-data</id>
+        <keyword>Scenario</keyword>
+        <line>6</line>
+        <name>Fetch User Data</name>
+        <steps>
+            <arguments>
+                <content>{
+  user(id: 6940083) {
+    id
+    name
+    email
+    gender
+    status
+  }
+}</content>
+                <line>8</line>
+            </arguments>
+            <keyword>Given </keyword>
+            <line>7</line>
+            <name>I perform a GraphQL POST request to "/graphql" with query</name>
+            <match>
+                <location>tests\steps\User_steps.spec.js:11</location>
+            </match>
+            <result>
+                <status>passed</status>
+                <duration>413618499</duration>
+            </result>
+        </steps>
+        <steps>
+            <keyword>Then </keyword>
+            <line>19</line>
+            <name>the response status code should be 200</name>
+            <match>
+                <location>tests\steps\User_steps.spec.js:37</location>
+            </match>
+            <result>
+                <status>passed</status>
+                <duration>870399</duration>
+            </result>
+        </steps>
+        <steps>
+            <keyword>Then </keyword>
+            <line>20</line>
+            <name>the response body should contain user details</name>
+            <match>
+                <location>tests\steps\User_steps.spec.js:43</location>
+            </match>
+            <result>
+                <status>failed</status>
+                <duration>736699</duration>
+                <error_message>Error: Expected response body to contain complete user details
+    at World.
+                    <anonymous> (C:\Users\00168W744\Documents\Playwright_Assignment ests\steps\User_steps.spec.js:45:15)
+                    </error_message>
+                </result>
+            </steps>
+            <type>scenario</type>
+        </elements>
+        <id>api-test---execute-graphql-query</id>
+        <line>1</line>
+        <keyword>Feature</keyword>
+        <name>API Test - Execute GraphQL Query</name>
+        <uri>testseatures\UserDetails.feature</uri>
+    </0>
